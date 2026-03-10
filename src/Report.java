@@ -1,5 +1,4 @@
 //Calculates: total income, total expenses, net profit or loss
-import javax.swing.*;
 import java.util.ArrayList;
 
 public class Report {
@@ -7,7 +6,7 @@ public class Report {
         double total = 0;
 
         for (Income income : incomes) {
-            total += income.getAmount();
+            total += income.getPrice() *  income.getQuantity();
         }
 
         return total;
@@ -17,7 +16,7 @@ public class Report {
         double total = 0;
 
         for (Expense expense : expenses) {
-            total += expense.getAmount();
+            total += expense.getPrice() * expense.getQuantity();
         }
         return total;
     }
@@ -28,13 +27,13 @@ public class Report {
         double net = totalIncome - totalExpense;
 
         System.out.println("\n===== FINANCIAL REPORT =====");
-        System.out.println("Total income: $" + totalIncome);
-        System.out.println("Total expense: $" + totalExpense);
+        System.out.println("Total income: ៛ " + totalIncome);
+        System.out.println("Total expense: ៛ " + totalExpense);
 
         if (net > 0) {
-            System.out.println("Net Profit: $" + net);
+            System.out.println("Net Profit: ៛ " + net);
         } else {
-            System.out.println("Net Loss: $" + Math.abs(net));
+            System.out.println("Net Loss: ៛ " + Math.abs(net));
         }
     }
 }
